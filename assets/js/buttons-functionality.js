@@ -1,7 +1,6 @@
 
 window.onload=function(){
-
-    var intervalId;
+    var timeoutId;
     //Adding event listener to our main buttons
     document.getElementById("add-button").addEventListener("click", addButtons);
     document.getElementById("clear-button").addEventListener("click", clear);
@@ -9,8 +8,10 @@ window.onload=function(){
     
     //Defining a function that adds buttons dynamically
     function addButtons(){
-        window.clearInterval(intervalId);
-        for(i=0;i<40;i++){
+        //Destroying the time out id inorder to prevent overlapping the functionalities
+        clearTimeout(timeoutId);
+
+        for(i=0;i<5;i++){
             var btn= document.createElement('button');
             btn.setAttribute("id","Button "+(i+1));
             btn.setAttribute("class","added-button");
@@ -23,17 +24,36 @@ window.onload=function(){
     }
     //Defining a function that clear all the buttons at once
     function clear(){
-        window.clearInterval(intervalId);
+        //Destroying the time out id inorder to prevent overlapping the functionalities
+        clearTimeout(timeoutId);
         document.getElementById("button-section").innerHTML="";
     }
     //Defining a function that removes the added buttons one by one
     function removeSlowly(){
-        intervalId= window.setInterval(
-            function () {
-                //finds the last button
-                var select=document.getElementById("button-section");
-                select.removeChild(select.lastChild);
-            }, 1000);      
+            //Checks if we have any button to be removed
+            var isEmpty = document.getElementById('button-section').innerHTML === "";
+
+            //Defining three functions and using time out to remove the buttons efficently and prevent memory leak
+            var remove3 = function (isEmpty) {
+                timeoutId= setTimeout(function() {
+                    var select=document.getElementById("button-section");
+                    console.log("Button section is empty? "+isEmpty);
+                    select.removeChild(select.lastChild);
+                    isEmpty = document.getElementById('button-section').innerHTML === "";
+                    console.log("Deleting..");
+                  if (!isEmpty) {
+                    remove3(isEmpty);
+                  }
+                }, 1000);
+              };
+              
+              var remove1 = function() {
+                remove3(isEmpty);
+              };
+              
+              remove1();
+             
+
     } 
 }
 //Alert function, triggers when any dynamically added button is clicked
