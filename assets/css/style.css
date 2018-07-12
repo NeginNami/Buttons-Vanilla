@@ -1,0 +1,9 @@
+#add-button, #remove-button{
+    margin-right: 15px;
+}
+#button-section{
+    margin-top: 50px;
+}
+.added-button{
+    margin: 5px;
+}
