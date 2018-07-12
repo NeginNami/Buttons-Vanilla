@@ -7,3 +7,82 @@
 .added-button{
     margin: 5px;
 }
+.text-center{
+    text-align: center;
+}
+.main-button{
+    padding: 10px 15px 11px !important;
+    font-size: 18px !important;
+    background-color: #ffffff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+#add-button{
+    color: #0bbb22;
+    border: 2px solid #0bbb22;
+}
+#remove-button{
+    color: #ff8a05;
+    border: 2px solid #ff8a05;
+}
+#clear-button{
+    color: #e61a0b;
+    border: 2px solid #e61a0b;
+}
+.added-button{
+    color: grey;
+    border: 2px solid grey;
+    padding: 7px 12px 8px !important;
+    font-size: 14px !important;
+    background-color: #ffffff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+
+}
+
+h1 {
+	font-size: 5vw;
+	width: 100vw;
+	margin-top: calc(50vh - 20vw);
+	text-align: center;
+	background: linear-gradient(
+		60deg,
+		hsl(0, 75%, 50%) 10%,
+		hsl(20, 75%, 50%) 10%,
+		hsl(20, 75%, 50%) 25%,
+		hsl(50, 75%, 50%) 25%,
+		hsl(50, 75%, 50%) 40%,
+		hsl(130, 75%, 50%) 40%,
+		hsl(130, 75%, 50%) 55%,
+		hsl(200, 75%, 50%) 55%,
+		hsl(200, 75%, 50%) 70%,
+		hsl(260, 75%, 50%) 70%,
+		hsl(260, 75%, 50%) 85%,
+		hsl(0, 75%, 50%) 85%
+	);
+
+	text-shadow: 0.5px -0.6vw #fff4;
+	color: #fff;
+	-webkit-background-clip: text;
+   	-webkit-text-fill-color: transparent;
+   	animation: 10s BeProud linear infinite,
+   	3s Always ease alternate infinite;
+}
+
+@keyframes BeProud {
+	100% { background-position: 30vw 0px; }
+}
+
+@keyframes Always {
+	100% { transform: scale(1.1);}
+}

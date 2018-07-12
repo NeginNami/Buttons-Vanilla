@@ -11,13 +11,14 @@ window.onload=function(){
         //Destroying the time out id inorder to prevent overlapping the functionalities
         clearTimeout(timeoutId);
 
-        for(i=0;i<5;i++){
+        for(i=0;i<40;i++){
+            j++;
             var btn= document.createElement('button');
-            btn.setAttribute("id","Button "+(i+1));
+            btn.setAttribute("id","Button "+(j));
             btn.setAttribute("class","added-button");
             //Adding event listener to the dynamically made buttons
             btn.setAttribute("onclick","showAlert(this.id)");
-            btn.innerText="Button "+(i+1);
+            btn.innerText="Button "+(j);
             document.getElementById("button-section").appendChild(btn);
 
         }
@@ -51,12 +52,12 @@ window.onload=function(){
                 remove3(isEmpty);
               };
               
-              remove1();
-             
-
+              remove1();         
     } 
 }
 //Alert function, triggers when any dynamically added button is clicked
 function showAlert(ID) {   
     alert(ID+" was clicked!");   
 }
+//Variable for saving the numbers of generated buttons
+var j=0;
