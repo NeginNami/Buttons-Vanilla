@@ -4,4 +4,4 @@ One page applicaton using only javascript, HTML and CSS to give functionality to
 
 ## Deployment
 
-Click on to see the result.
+Click on https://neginnami.github.io/Buttons-Vanilla/ to see the result.
