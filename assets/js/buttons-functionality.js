@@ -33,7 +33,8 @@ window.onload=function(){
     function removeSlowly(){
             //Checks if we have any button to be removed
             var isEmpty = document.getElementById('button-section').innerHTML === "";
-
+            //Clearing the timeout id in case the remove slowly button is being pressed repeatedly
+            clearTimeout(timeoutId);
             //Defining three functions and using time out to remove the buttons efficently and prevent memory leak
             var remove3 = function (isEmpty) {
                 timeoutId= setTimeout(function() {
