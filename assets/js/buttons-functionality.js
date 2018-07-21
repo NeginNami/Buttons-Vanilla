@@ -37,7 +37,7 @@ window.onload=function(){
             clearTimeout(timeoutId);
             //Defining a function expression which calls itself recursively
             var remove = function (isEmpty) {
-                console.log("inside remove3");
+
                 timeoutId= setTimeout(function() {
                     var select=document.getElementById("button-section");
                     console.log("Button section is empty? "+isEmpty);
@@ -45,7 +45,6 @@ window.onload=function(){
                     isEmpty = document.getElementById('button-section').innerHTML === "";
                     console.log("Deleting..");
                   if (!isEmpty) {
-                      console.log("going for next rec call");
                     remove(isEmpty);
                   }
                 }, 1000);
