@@ -35,8 +35,9 @@ window.onload=function(){
             var isEmpty = document.getElementById('button-section').innerHTML === "";
             //Clearing the timeout id in case the remove slowly button is being pressed repeatedly
             clearTimeout(timeoutId);
-            //Defining three functions and using time out to remove the buttons efficently and prevent memory leak
-            var remove3 = function (isEmpty) {
+            //Defining a function expression which calls itself recursively
+            var remove = function (isEmpty) {
+                console.log("inside remove3");
                 timeoutId= setTimeout(function() {
                     var select=document.getElementById("button-section");
                     console.log("Button section is empty? "+isEmpty);
@@ -44,16 +45,14 @@ window.onload=function(){
                     isEmpty = document.getElementById('button-section').innerHTML === "";
                     console.log("Deleting..");
                   if (!isEmpty) {
-                    remove3(isEmpty);
+                      console.log("going for next rec call");
+                    remove(isEmpty);
                   }
                 }, 1000);
               };
-              
-              var remove1 = function() {
-                remove3(isEmpty);
-              };
-              
-              remove1();         
+    
+              remove(isEmpty);
+          
     } 
 }
 //Alert function, triggers when any dynamically added button is clicked
